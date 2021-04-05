@@ -2,7 +2,7 @@ import React from 'react'
 import 'semantic-ui-css/semantic.min.css'
 import Navbar from './Navbar'
 import allPaintings from './data/data'
-import Paintings from './Paintings'
+import PaintingList from './PaintingList'
 
 function App () {
   return (
@@ -13,7 +13,7 @@ function App () {
         title='My painting App'
         subtitle="Gotta Catch 'em All"
       />
-      <Paintings paintings={allPaintings} />
+      <PaintingList paintings={allPaintings} />
     </div>
   )
 }
