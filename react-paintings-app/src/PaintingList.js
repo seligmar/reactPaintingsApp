@@ -3,7 +3,7 @@ import PaintingCard from './PaintingCard'
 
 const PaintingList = props => {
   return (
-    <div>
+    <div className='grid-container'>
       {props.paintings.map(painting => (
         <PaintingCard key={painting.id} painting={painting} />
       ))}

@@ -6,3 +6,10 @@
 .App-link {
   color: #61dafb;
 }
+
+.grid-container {
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-areas: 'myArea myArea myArea myArea';
+  margin-left: 15px;
+}
