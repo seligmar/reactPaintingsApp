@@ -28,7 +28,7 @@ class PaintingCard extends React.Component {
             id={this.props.painting.id}
             onClick={this.props.removePainting}
             className='trash icon'
-          ></i>
+          />
         </div>
       </div>
     )
