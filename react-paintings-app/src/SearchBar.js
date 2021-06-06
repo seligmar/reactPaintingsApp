@@ -2,11 +2,13 @@ import React from 'react'
 
 const SearchBar = props => {
   return (
-    <div className='ui action input'>
+    <div className='ui action input' style={{ marginLeft: '75%' }}>
       <input
         type='text'
         placeholder='Search'
-        onChange={props.inputSearchTerm}
+        onChange={e => {
+          props.inputSearchTerm(e.target.value)
+        }}
       />
       <button className='ui icon button'>
         <i className='search icon' />

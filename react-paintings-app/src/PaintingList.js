@@ -15,14 +15,14 @@ class PaintingList extends React.Component {
     this.setState({ allPaintings: newPaintingList })
   }
 
-  inputSearchTerm = e => {
-    this.setState({ searchTerm: e })
-    console.log(this.state.searchTerm)
+  inputSearchTerm = searchText => {
+    this.setState({ searchTerm: searchText })
+    this.filterPaintings()
   }
 
   filterPaintings = () => {
-    var newPaintingList = this.state.allPaintings.filter(
-      painting => !painting.title.includes(this.state.searchTerm)
+    var newPaintingList = this.state.allPaintings.filter(painting =>
+      painting.title.toLowerCase().includes(this.state.searchTerm.toLowerCase())
     )
     this.setState({ allPaintings: newPaintingList })
   }
@@ -30,7 +30,7 @@ class PaintingList extends React.Component {
   render () {
     return (
       <div>
-        <SearchBar filterPaintings={this.inputSearchTerm} />
+        <SearchBar inputSearchTerm={this.inputSearchTerm} />
         <div className='grid-container'>
           {this.state.allPaintings.map(painting => (
             <PaintingCard
